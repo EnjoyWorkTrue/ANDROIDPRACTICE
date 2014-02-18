@@ -8,6 +8,7 @@ import android.os.Bundle;
 public class MainActivity extends Activity implements Communicator {
 	public MyFragment frag = new MyFragment();
     public FragmentB frag2 = new FragmentB();
+    String keepCount = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements Communicator {
 	public void respond(String data) {
 		FragmentManager manager = getFragmentManager();
 		frag2 = (FragmentB) manager.findFragmentByTag("secondFragment");
+		keepCount = data;
 		frag2.changeText(data);
 		
 		
