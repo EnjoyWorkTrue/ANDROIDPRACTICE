@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Catalk</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main_fragment">MainFragment</string>
+    <string name="title_activity_fragment">FragmentA</string>
+    <string name="title_activity_fragment_b">FragmentB</string>
+    <string-array name="Titles">
+        <item>Joseph</item>
+        <item>Hongi</item>
+        <item>Julie</item>
+    </string-array>
+
+</resources>
