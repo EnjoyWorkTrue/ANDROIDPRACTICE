@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -49,11 +48,16 @@ public class MainActivity extends Activity {
 				View view, final int position,long id) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 	        builder.setCancelable(true);
-	        builder.setTitle(mAdapter.getItem(position));
-	        builder.setNegativeButton("No", null);
-	        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	        //builder.setTitle(mAdapter.getItem(position));
+	        builder.setNegativeButton("Cancle", null);
+	        final EditText edit = new EditText(MainActivity.this);
+	        edit.setText(mAdapter.getItem(position));
+	        edit.setTextSize(30);
+	        builder.setView(edit);
+	        builder.setPositiveButton("Edit", new DialogInterface.OnClickListener() {
 
 	            public void onClick(DialogInterface dialog, int which) {
+	            	Toast.makeText(MainActivity.this,edit.getText().toString(),0);
 	            	mAdapter.remove(mAdapter.getItem(position));
 	            	mAdapter.notifyDataSetChanged();
 	            }
